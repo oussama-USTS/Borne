@@ -293,7 +293,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             >
               <h2 className="text-2xl font-bold mb-6">Types de Recharge</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                {data.sections[0].content.map((type) => (
+                {data?.sections?.[0]?.content?.map((type) => (
                   <div key={type.name} className="bg-gray-800 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-4">{type.name}</h3>
                     <div className="space-y-2">
@@ -317,7 +317,7 @@ const ProductPage = ({ params }: { params: { slug: string } }) => {
             >
               <h2 className="text-2xl font-bold mb-6">Courbes de Recharge</h2>
               <div className="space-y-12">
-                {data.sections[1].graphs.map((graph, graphIndex) => (
+                {data?.sections?.[1]?.graphs?.map((graph, graphIndex) => (
                   <div key={graph.type} className="bg-gray-800 rounded-lg p-6">
                     <h3 className="text-xl font-semibold mb-2">{graph.title}</h3>
                     <p className="text-gray-400 mb-6">{graph.description}</p>

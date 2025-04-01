@@ -4,7 +4,17 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { BoltIcon, CpuChipIcon, WrenchScrewdriverIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
-const technicalFeatures = [
+type ColorVariant = 'blue' | 'purple' | 'green' | 'red';
+
+interface TechnicalFeature {
+  title: string;
+  description: string;
+  specs: Array<{ label: string; value: string }>;
+  icon: React.ComponentType<any>;
+  color: ColorVariant;
+}
+
+const technicalFeatures: TechnicalFeature[] = [
   {
     title: "Puissance de Charge",
     description: "Des solutions adaptées à tous les besoins, de la charge lente à la charge ultra-rapide",
@@ -55,7 +65,7 @@ const technicalFeatures = [
   }
 ]
 
-const colorVariants = {
+const colorVariants: Record<ColorVariant, string> = {
   blue: "from-blue-500 to-blue-600",
   purple: "from-purple-500 to-purple-600",
   green: "from-green-500 to-green-600",
