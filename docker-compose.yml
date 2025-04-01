@@ -6,8 +6,8 @@ services:
     build:
       context: .
     ports:
-      - "3000"
+      - "3003"
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=3003
     restart: unless-stopped
